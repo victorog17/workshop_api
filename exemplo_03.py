@@ -4,5 +4,13 @@ app = FastAPI()
 
 
 @app.get("/")
-async def root():
+def root():
     return {"message": "Hello World"}
+
+@app.get("/outro_recurso")
+def pegar_recurso():
+    return "message"
+
+@app.post("/outro_recurso/{id}")
+def criar_recurso():
+    return {"message": id}
